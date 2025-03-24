@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Apollonia Employee Manager</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Apollonia Employee Manager</h1>
+        <button id="logout-btn">Logout</button>
+    </header>
+
+    <form id="employee-form">
+        <input
+                type="text"
+                id="firstName"
+                placeholder="First Name"
+                required
+                pattern="[A-Za-z]+"
+                title="First name must contain only letters (A–Z)."
+        />
+
+        <input
+                type="text"
+                id="lastName"
+                placeholder="Last Name"
+                required
+                pattern="[A-Za-z]+"
+                title="Last name must contain only letters (A–Z)."
+        />
+
+        <!-- Department checkboxes will be injected here -->
+        <div id="departmentCheckboxes"></div>
+
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <label for="searchInput" style="display:none;">Search Employees</label>
+    <input type="text" id="searchInput" placeholder="Search employees..." />
+
+
+    <ul id="employeeList"></ul>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>

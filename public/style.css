@@ -1,0 +1,234 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body with background image */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url("./images/dental-clinic.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* Main container with translucent background */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9); /* Slightly see-through so background shows */
+    padding: 3rem 3.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: #005fa3;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Logout button */
+#logout-btn {
+    background: #424147;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1.5rem; /* Rounder corners */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#logout-btn:hover {
+    background: #cc6c6c;
+    transform: scale(1.03);
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    /* shared styles for both text and password fields */
+    flex: 1 1 200px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: #f7f7f7;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    outline: none;
+    border-color: #0077cc;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.2);
+}
+
+
+/* Department checkboxes container */
+#departmentCheckboxes {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+#departmentCheckboxes label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+#departmentCheckboxes input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+}
+
+/* Buttons (Add Employee, etc.) */
+button {
+    background: #4CAF50;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 1.5rem; /* Rounder corners */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: #43A047;
+    transform: scale(1.03);
+}
+
+/* Search input */
+#searchInput {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #f7f7f7;
+}
+
+#searchInput:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.2);
+}
+
+/* Employee list */
+#employeeList {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+#employeeList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f7f9;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #0077cc;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+#employeeList li:hover {
+    background: #e8f2fa;
+}
+
+/* Shared button group layout */
+#employeeList .button-group {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: flex-end;
+}
+
+/* Shared button base styles */
+#employeeList button.edit-btn,
+#employeeList button.delete-btn {
+    width: 100px;
+    height: 40px;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem !important;
+    font-weight: 600;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    line-height: 1;
+}
+
+
+/* Edit button */
+#employeeList .edit-btn {
+    background: #007BFF;
+    color: white;
+}
+
+#employeeList .edit-btn:hover {
+    background: #0056b3;
+    transform: scale(1.03);
+}
+
+/* Delete button */
+#employeeList .delete-btn {
+    background: #5c0c04;
+    color: white;
+}
+
+#employeeList .delete-btn:hover {
+    background: #5c0c04;
+    transform: scale(1.03);
+}
+
+/* Responsive Adjustments for small screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 2rem;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    #employeeList li {
+        flex-direction: column; /* Stack name and delete button vertically on very small screens */
+        align-items: flex-start;
+    }
+}
+

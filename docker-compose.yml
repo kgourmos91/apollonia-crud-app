@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    container_name: apollonia-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  app:
+    build: .
+    container_name: apollonia-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/apollonia
+      - PORT=3000
+
+volumes:
+  mongo-data:
